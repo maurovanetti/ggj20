@@ -65,7 +65,7 @@ public class ToolContainer : MonoBehaviour
         _animator.SetBool("Show", true);
     }
 
-        public void HideTools()
+    public void HideTools()
     {
         //Add show logic
         Debug.Log("Hide tool container ");

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PlantController : MonoBehaviour
 {
+    public PlantGraphicsController graphicsController;
     public PlantControllerVariable activePlant;
     public InteractionUsedVariable interactionUsed;
     public GameEvent onPlantSelected;
@@ -15,12 +16,12 @@ public class PlantController : MonoBehaviour
     public List<PlantStatus> currentStatuses;
     public List<PlantStatus> correctStatuses;
 
-    private Animator _animator;
+    // private Animator _animator;
     private AudioSource _audioSource;
     private GameObject celebration;
 
     private void Awake() {
-        _animator = GetComponent<Animator>();
+        // _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         foreach (Transform child in transform)
         {
@@ -30,7 +31,6 @@ public class PlantController : MonoBehaviour
                 break;
             }
         }
-                
     }
 
     //call when plant is selected/deselected
@@ -48,6 +48,7 @@ public class PlantController : MonoBehaviour
         {
             //Select plant logic
             Debug.Log("Select " + gameObject.name);
+            graphicsController.OnSelect();
             spotlightAdjuster.ToForeground();
         }
         else
@@ -74,11 +75,41 @@ public class PlantController : MonoBehaviour
     public void ApplyUsedTool()
     {
         if (activePlant.Value == this) {
+            // Affect music
             Interaction interaction = interactionUsed.Value;
             Type adjusterType = interaction.tool.GetAdjusterType();
             Adjuster adjuster = (Adjuster) GetComponentInChildren(adjusterType);
             adjuster.enabled = true;
 
+            // Affect animation
+            string statusName = interaction.targetStatus.name;
+            if (statusName == "High Pitch")
+            {
+                graphicsController.OnCut();
+
+            }
+            else if (statusName == "Low Pitch")
+            {
+                graphicsController.OnUnsetCut();
+            }
+            else if (statusName == "Major Mode")
+            {
+                graphicsController.OnUnsetMakeBad();
+            }
+            else if (statusName == "Minor Mode")
+            {
+                graphicsController.OnMakeBad();
+            }
+            else if (statusName == "Good Quality")
+            {
+                graphicsController.OnUnsetMakeSad();
+            }
+            else if (statusName == "Bad Quality")
+            {
+                graphicsController.OnMakeSad();
+            }
+
+            // Affect status
             List<PlantStatus> statusesToRemove = new List<PlantStatus>();
             foreach (PlantStatus status in currentStatuses)
             {

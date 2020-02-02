@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Expressions
+    uniqueID: 592781341
+    locked: 0
+  - name: Tools
+    uniqueID: 1820594085
+    locked: 0
