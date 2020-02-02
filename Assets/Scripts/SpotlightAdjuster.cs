@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpotlightAdjuster : Adjuster
 {
     protected float foregroundVolume = +2f;
-    protected float backgroundVolume = -10f;
+    protected float backgroundVolume = -15f;
 
     public void ToForeground()
     {

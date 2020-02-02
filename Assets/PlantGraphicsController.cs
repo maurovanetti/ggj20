@@ -112,16 +112,16 @@ private void Start()
             spriteRenderer.sprite = SadSprite != null? SadSprite : _initialSprite;
         
         if(isCutted && isFeellingBad && !isFeellingSad)
-            spriteRenderer.sprite = BothSprite;
+            spriteRenderer.sprite = BothSprite != null? BothSprite : _initialSprite;
 
         if(isCutted && !isFeellingBad && isFeellingSad)
-            spriteRenderer.sprite = CuttedSadSprite;
+            spriteRenderer.sprite = CuttedSadSprite != null? CuttedSadSprite : _initialSprite;
 
         if(!isCutted && isFeellingBad && isFeellingSad)
-            spriteRenderer.sprite = BadSadSprite;
+            spriteRenderer.sprite = BadSadSprite != null? BadSadSprite : _initialSprite;
 
         if(isCutted && isFeellingBad && isFeellingSad)
-            spriteRenderer.sprite = CuttedBadSadSprite;
+            spriteRenderer.sprite = CuttedBadSadSprite!= null? CuttedBadSadSprite : _initialSprite;
 
         if(!isCutted && !isFeellingBad && !isFeellingSad)
             spriteRenderer.sprite = _initialSprite;

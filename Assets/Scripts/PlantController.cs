@@ -31,6 +31,40 @@ public class PlantController : MonoBehaviour
                 break;
             }
         }
+
+        Init();
+    }
+
+    public void Init() 
+    {
+        foreach(PlantStatus status in currentStatuses)
+        {
+            if (status.name == "High Pitch")
+            {
+                graphicsController.OnCut();
+
+            }
+            else if (status.name == "Low Pitch")
+            {
+                graphicsController.OnUnsetCut();
+            }
+            else if (status.name == "Major Mode")
+            {
+                graphicsController.OnUnsetMakeBad();
+            }
+            else if (status.name == "Minor Mode")
+            {
+                graphicsController.OnMakeBad();
+            }
+            else if (status.name == "Good Quality")
+            {
+                graphicsController.OnUnsetMakeSad();
+            }
+            else if (status.name == "Bad Quality")
+            {
+                graphicsController.OnMakeSad();
+            }
+        }
     }
 
     //call when plant is selected/deselected
