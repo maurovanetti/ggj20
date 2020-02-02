@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Notes Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a5b32da803c557b4684d1eb6ef545eaf, type: 3}
+    - {fileID: 2800000, guid: 53325f7c942e89f4eb51acae9d954034, type: 3}
+    - {fileID: 2800000, guid: 57c87817509a47d47a5bdd6649b556dd, type: 3}
+    - {fileID: 2800000, guid: fa53763b5f22a92468778b2eafb89950, type: 3}
+    totalSpriteSurfaceArea: 54199
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 57c87817509a47d47a5bdd6649b556dd, type: 3}
+  - {fileID: 21300000, guid: a5b32da803c557b4684d1eb6ef545eaf, type: 3}
+  - {fileID: 21300000, guid: fa53763b5f22a92468778b2eafb89950, type: 3}
+  - {fileID: 21300000, guid: 53325f7c942e89f4eb51acae9d954034, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - sbagliata_doppia
+  - giusta_doppia
+  - sbagliata_singola
+  - giusta_singola
+  m_Tag: Notes Atlas
+  m_IsVariant: 0
